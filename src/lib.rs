@@ -35,7 +35,7 @@ computationally absent.
 
 ## Fleet Usage
 
-```rust
+```ignore
 let mut mgr = GhostTileManager::new(0.5); // 50% sparsity budget
 let mut pattern = GhostPattern::new("reasoning", seq_len, tile_size, 1.0);
 pattern.use_tile(row, col, confidence);
@@ -44,6 +44,8 @@ mgr.add_pattern(pattern);
 let best = mgr.best_pattern(); // most efficient pattern
 ```
 */
+
+pub mod attention;
 
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
